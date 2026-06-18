@@ -8,6 +8,7 @@ import Scribe from "../components/Scribe";
 import CodingPanel from "../components/CodingPanel";
 import PhotoCapture, { VisitPhoto } from "../components/PhotoCapture";
 import SignaturePad from "../components/SignaturePad";
+import DeltaCard from "../components/DeltaCard";
 import {
   ConfirmedCode,
   CodeSuggestion,
@@ -214,6 +215,8 @@ export default function AssessmentDetail() {
       {/* Read-only visit-documentation summaries for reviewers (doctor/admin). */}
       {isReviewer && (
         <>
+          <DeltaCard hccHistory={form.hcc_history} confirmed={confirmed} />
+
           {confirmed.length > 0 && (
             <div className="card" style={{ marginBottom: 16 }}>
               <h3 style={{ marginTop: 0 }}>Confirmed HCC codes (V28)</h3>

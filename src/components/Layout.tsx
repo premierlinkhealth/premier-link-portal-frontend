@@ -5,16 +5,25 @@ import { Role } from "../types";
 
 const NAV: Record<Role, { to: string; label: string }[]> = {
   nurse: [
+    { to: "/home", label: "Dashboard" },
     { to: "/visits", label: "My Visits" },
     { to: "/assessments", label: "My Assessments" },
+    { to: "/hcc-reference", label: "HCC Reference" },
+    { to: "/account", label: "My Account" },
   ],
-  doctor: [{ to: "/review", label: "Review Queue" }],
+  doctor: [
+    { to: "/review", label: "Review Queue" },
+    { to: "/hcc-reference", label: "HCC Reference" },
+  ],
   admin: [
     { to: "/dashboard", label: "Dashboard" },
     { to: "/patients", label: "Patients" },
     { to: "/scheduling", label: "Scheduling" },
+    { to: "/nurses", label: "Nurses" },
     { to: "/users", label: "Staff Accounts" },
     { to: "/assessments", label: "All Assessments" },
+    { to: "/hcc-reference", label: "HCC Reference" },
+    { to: "/settings", label: "Settings" },
   ],
 };
 
@@ -40,6 +49,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             <span className="muted" style={{ fontSize: 13 }}>{profile.full_name} · {profile.email}</span>
             <button className="btn secondary" onClick={() => logout()}>Sign out</button>
           </div>
+        </div>
+        <div className="demo-banner">
+          Pre-launch environment — sample data only. Not yet cleared for real patient information (PHI).
         </div>
         <div className="content">{children}</div>
       </div>

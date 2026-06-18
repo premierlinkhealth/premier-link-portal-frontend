@@ -155,3 +155,17 @@ h1.page { font-size: 22px; margin: 0 0 4px; }
 /* Read-only summaries */
 .kv { display: flex; gap: 8px; font-size: 14px; padding: 5px 0; }
 .kv .k { color: var(--muted); min-width: 120px; }
+
+/* Review-queue stat cards + delta callout (doctor) */
+.statgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 14px; }
+@media (max-width: 720px) { .statgrid { grid-template-columns: repeat(2, 1fr); } }
+.statcard { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; text-align: center; }
+.statcard-link { text-decoration: none; display: block; }
+.statcard-link:hover .statcard { border-color: var(--teal); }
+.statcard-ic { font-size: 18px; line-height: 1; }
+.statcard-n { font-size: 26px; font-weight: 800; color: var(--navy); margin-top: 4px; }
+.statcard-l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.note { background: #f0f6f6; border: 1px solid #cfe6e6; border-radius: 8px; padding: 10px 12px; font-size: 13px; color: var(--text); }
+
+/* Pre-PHI / demo banner */
+.demo-banner { background: #fff4e0; color: #8a5a00; border-bottom: 1px solid #f0dcae; font-size: 12px; font-weight: 600; text-align: center; padding: 6px 12px; }
